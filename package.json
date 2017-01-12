@@ -1,0 +1,28 @@
+{
+  "name": "@flourish/template-examples-circle",
+  "version": "1.0.0",
+  "description": "Flourish template examples/circle",
+  "main": "index.js",
+  "directories": {},
+  "dependencies": {},
+  "devDependencies": {
+    "d3": "^4.4.0",
+    "rollup": "^0.37.0",
+    "rollup-plugin-node-resolve": "^2.0.0",
+    "rollup-plugin-uglify": "^1.0.1"
+  },
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kiln/templates.git"
+  },
+  "author": "Kiln Enterprises Ltd",
+  "license": "UNLICENSED",
+  "private": true,
+  "bugs": {
+    "url": "https://github.com/kiln/templates/issues"
+  },
+  "homepage": "https://github.com/kiln/templates#readme"
+}
