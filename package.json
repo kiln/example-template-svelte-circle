@@ -1,16 +1,17 @@
 {
   "name": "@flourish/template-examples-circle",
   "version": "1.0.0",
-  "description": "Flourish template examples/circle",
+  "description": "Flourish sample template: circle",
   "main": "index.js",
   "directories": {},
-  "dependencies": {},
-  "devDependencies": {
-    "d3": "^4.4.0",
-    "rollup": "^0.37.0",
+  "dependencies": {
+    "d3-selection": "^1.0.3",
+    "d3-transition": "^1.0.3",
+    "rollup": "^0.41.4",
     "rollup-plugin-node-resolve": "^2.0.0",
     "rollup-plugin-uglify": "^1.0.1"
   },
+  "devDependencies": {},
   "scripts": {
     "build": "rollup -c"
   },

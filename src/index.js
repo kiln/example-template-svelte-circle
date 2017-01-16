@@ -1,5 +1,7 @@
-// Import the latest version of D3
-import * as d3 from "d3";
+// This template uses d3-selection and d3-transition
+// Importing d3-transition adds the .transition() method to selections
+import { select } from "d3-selection";
+import "d3-transition";
 
 // Anything the end user can configure in the settings panel or
 // presentations editor must be in this object. The separate settings.js
@@ -18,7 +20,7 @@ export function draw() {
 	// Append and style elements based on the current state
 	var w = window.innerWidth,
 	    h = window.innerHeight;
-	svg = d3.select(document.body).append("svg").attr("width", w).attr("height", h);
+	svg = select(document.body).append("svg").attr("width", w).attr("height", h);
 	circle = svg.append("circle")
 		.attr("cx", w/2)
 		.attr("cy", h/2)
