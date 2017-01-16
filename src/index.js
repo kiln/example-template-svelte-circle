@@ -13,14 +13,14 @@ export var state = {
 	color: "#FF0000"
 };
 
-var svg, circle;
+var circle;
 
 // Initialise the graphic
 export function draw() {
 	// Append and style elements based on the current state
 	var w = window.innerWidth,
 	    h = window.innerHeight;
-	svg = select(document.body).append("svg").attr("width", w).attr("height", h);
+	var svg = select(document.body).append("svg").attr("width", w).attr("height", h);
 	circle = svg.append("circle")
 		.attr("cx", w/2)
 		.attr("cy", h/2)
@@ -31,12 +31,11 @@ export function draw() {
 }
 
 // For non-fluid visualisations, e.g. where an SVG is drawn to fill the available space,
-// it may be useful to update the visualisation when the window size changes.
+// it may be useful to redraw the visualisation when the window size changes.
 window.addEventListener("resize", function() {
-	var w = window.innerWidth,
-	    h = window.innerHeight;
-	svg.attr("width", w).attr("height", h);
-	circle.attr("cx", w/2).attr("cy", h/2);
+	if (!circle) return; // Do nothing if draw() hasn’t been called yet
+	select("svg").remove();
+	draw();
 });
 
 // The update function is called when the user changes a state property in
