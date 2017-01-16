@@ -19,7 +19,7 @@
     "url": "git+https://github.com/kiln/templates.git"
   },
   "author": "Kiln Enterprises Ltd",
-  "license": "UNLICENSED",
+  "license": "BSD-3-Clause",
   "private": true,
   "bugs": {
     "url": "https://github.com/kiln/templates/issues"
