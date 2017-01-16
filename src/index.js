@@ -3,9 +3,9 @@
 import { select } from "d3-selection";
 import "d3-transition";
 
-// Anything the end user can configure in the settings panel or
-// presentations editor must be in this object. The separate settings.js
-// file references these property names.
+// Anything the end user can configure in the settings panel must
+// be in this object. The separate settings.js file references
+// these property names.
 export var state = {
 	// Note: property names starting with an underscore are reserved for use by Flourish
 	radius: 10,
