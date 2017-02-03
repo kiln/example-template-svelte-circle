@@ -5,4 +5,4 @@ of a graphic, and how to use D3 transitions to animate a graphic to an updated s
 
 Use the [Flourish SDK](https://www.npmjs.com/package/@flourish/sdk) to try it out.
 
-The main code file for the template is [`src/index.js`](src/index.js).
+The main code file for the template is [`src/index.js`](https://github.com/kiln/example-template-circle/blob/master/src/index.js).
