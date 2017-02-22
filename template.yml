@@ -1,0 +1,29 @@
+id: circle
+name: Circle
+author: Flourish team
+sdk_version: 2
+
+settings:
+  - property: radius
+    category: Data
+    name: Radius
+    type: number
+    description: The radius of the circle
+  - property: stroke
+    category: Design
+    name: Stroke
+    description: The thickness of the circle’s border, between 0 and 5
+    type: number
+  - property: color
+    category: Design
+    name: Color
+    description: The color of the circle
+    type: color
+
+build:
+  javascript:
+    script: npm run build
+    directory: src
+    files:
+      - package.json
+      - rollup.config.js
