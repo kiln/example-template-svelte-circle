@@ -42,6 +42,7 @@ window.addEventListener("resize", function() {
 // the settings panel or presentation editor. It updates elements to reflect
 // the current state.
 export function update() {
+	if (state.radius <= 0) throw new Error("Radius must be positive");
 	circle.transition()
 		.attr("r", state.radius)
 		.attr("fill", state.color)
