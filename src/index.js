@@ -1,7 +1,6 @@
-// This template uses d3-selection and d3-transition
-// Importing d3-transition adds the .transition() method to selections
-import { select } from "d3-selection";
-import "d3-transition";
+import App from './App.html';
+import tween from './tween.js';
+import * as eases from 'eases-jsnext';
 
 // Anything the end user can configure in the settings panel must
 // be in this object. The separate settings.js file references
@@ -13,38 +12,30 @@ export var state = {
 	color: "#FF0000"
 };
 
-var circle;
+var lastState = Object.assign( {}, state );
+var currentTween;
+var app;
 
 // Initialise the graphic
 export function draw() {
-	// Append and style elements based on the current state
-	var w = window.innerWidth,
-	    h = window.innerHeight;
-	var svg = select(document.body).append("svg").attr("width", w).attr("height", h);
-	circle = svg.append("circle")
-		.attr("cx", w/2)
-		.attr("cy", h/2)
-		.attr("r", state.radius)
-		.attr("fill", state.color)
-		.attr("stroke", "black")
-		.attr("stroke-width", state.stroke);
+	app = new App({
+		target: document.body,
+		data: state
+	});
 }
-
-// For non-fluid visualisations, e.g. where an SVG is drawn to fill the available space,
-// it may be useful to redraw the visualisation when the window size changes.
-window.addEventListener("resize", function() {
-	if (!circle) return; // Do nothing if draw() hasn’t been called yet
-	select("svg").remove();
-	draw();
-});
 
 // The update function is called when the user changes a state property in
 // the settings panel or presentation editor. It updates elements to reflect
 // the current state.
 export function update() {
 	if (state.radius <= 0) throw new Error("Radius must be positive");
-	circle.transition()
-		.attr("r", state.radius)
-		.attr("fill", state.color)
-		.attr("stroke-width", state.stroke);
+
+	if ( currentTween ) currentTween.stop();
+	currentTween = tween( lastState, state, function ( state ) {
+		app.set( state );
+		lastState = state;
+	}, {
+		duration: 400,
+		easing: eases.cubicInOut
+	});
 }

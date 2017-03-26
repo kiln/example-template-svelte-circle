@@ -5,13 +5,13 @@
   "main": "index.js",
   "directories": {},
   "dependencies": {
-    "d3-selection": "^1.0.3",
-    "d3-transition": "^1.0.3",
     "rollup": "^0.41.4",
     "rollup-plugin-node-resolve": "^2.0.0",
     "rollup-plugin-uglify": "^1.0.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "eases-jsnext": "^1.0.8"
+  },
   "scripts": {
     "build": "rollup -c"
   },
