@@ -1,6 +1,6 @@
-id: circle
-name: Circle
-author: Flourish team
+id: svelte-circle
+name: Svelte Circle
+author: Rich Harris
 sdk_version: 2
 
 settings:
