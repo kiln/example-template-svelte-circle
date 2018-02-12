@@ -2,6 +2,7 @@ id: svelte-circle
 name: Svelte Circle
 author: Rich Harris
 sdk_version: 2
+autoheight: 1x1
 
 settings:
   - property: radius
