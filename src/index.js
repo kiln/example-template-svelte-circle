@@ -1,26 +1,26 @@
-import App from './App.html';
+import App from './App.svelte';
 import tween from './tween.js';
 import * as eases from 'eases-jsnext';
 
 // Anything the end user can configure in the settings panel must
 // be in this object. The separate settings.js file references
 // these property names.
-export var state = {
+export const state = {
 	// Note: property names starting with an underscore are reserved for use by Flourish
 	radius: 10,
 	stroke: 1,
 	color: "#FF0000"
 };
 
-var lastState = Object.assign( {}, state );
-var currentTween;
-var app;
+let lastState = Object.assign( {}, state );
+let currentTween;
+let app;
 
 // Initialise the graphic
 export function draw() {
 	app = new App({
 		target: document.body,
-		data: state
+		props: state
 	});
 }
 
@@ -32,7 +32,7 @@ export function update() {
 
 	if ( currentTween ) currentTween.stop();
 	currentTween = tween( lastState, state, function ( state ) {
-		app.set( state );
+		app.$set( state );
 		lastState = state;
 	}, {
 		duration: 400,
