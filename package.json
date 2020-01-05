@@ -5,11 +5,12 @@
   "main": "index.js",
   "directories": {},
   "dependencies": {
-    "eases-jsnext": "^1.0.8",
-    "rollup": "^0.41.4",
-    "rollup-plugin-node-resolve": "^2.0.0",
-    "rollup-plugin-svelte": "^1.6.1",
-    "rollup-plugin-uglify": "^1.0.1"
+    "@rollup/plugin-node-resolve": "^6.1.0",
+    "eases-jsnext": "^1.0.10",
+    "rollup": "^1.28.0",
+    "rollup-plugin-svelte": "^5.1.1",
+    "rollup-plugin-uglify": "^6.0.4",
+    "svelte": "^3.16.7"
   },
   "scripts": {
     "build": "rollup -c"
