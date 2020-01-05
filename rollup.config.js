@@ -1,18 +1,20 @@
- var nodeResolve = require("rollup-plugin-node-resolve"),
-     svelte = require("rollup-plugin-svelte"),
-     uglify = require("rollup-plugin-uglify");
+import nodeResolve from "@rollup/plugin-node-resolve";
+import svelte from "rollup-plugin-svelte";
+import uglify from 'rollup-plugin-uglify-es';
 
 export default {
-  entry: "src/index.js",
-  format: "iife",
-  moduleName: "template",
-  dest: "template.js",
-  sourceMap: true,
+  input: "src/index.js",
+  output: {
+    format: "iife",
+    name: "template",
+    file: "template.js",
+    sourcemap: true,
+  },
 
   // d3 relies on the node-resolve plugin
   plugins: [
-    nodeResolve({ jsnext: true }),
     svelte(),
-    uglify(),
+    nodeResolve(),
+	uglify(),
   ]
 };
